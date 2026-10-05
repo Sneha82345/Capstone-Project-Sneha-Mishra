@@ -252,3 +252,6 @@ INSERT INTO orders (order_id, customer_id, product_id, order_date, quantity, dis
 SELECT COUNT(*) FROM customers;
 SELECT COUNT(*) FROM products;
 SELECT COUNT(*) FROM orders;
+
+UPDATE orders SET discount_pct = NULL WHERE discount_pct = ''; --26 rows affected in 5.722ms
+UPDATE orders SET rating = NULL WHERE rating = ''; --0 records retrieved in 0.884ms
