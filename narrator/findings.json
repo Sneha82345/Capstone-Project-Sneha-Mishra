@@ -1,1 +1,22 @@
+findings = {
+    "cleaned_total_revenue_inr": float(cleaned_total),
+    "raw_total_revenue_inr": float(raw_total),
+    "duplicate_reconciliation_delta_inr": float(delta),
+    "return_rate_by_payment": {"COD": float(rates["COD"]),
+                               "CARD": float(rates["CARD"]),
+                               "UPI": float(rates["UPI"])},
+    "highest_risk_segment": {"payment_method": top_pm,
+                             "city_tier": top_tier,
+                             "return_rate_pct": top_rate},
+    "true_peak_month": {"month": peak_month,
+                        "revenue_inr": float(monthly_corr[peak_month])},
+    "outlier_inflated_month": {"month": infl_month,
+                               "apparent_revenue_inr": float(monthly_all[infl_month]),
+                               "corrected_revenue_inr": float(monthly_corr[infl_month])},
+}
 
+os.makedirs("narrator", exist_ok=True)
+with open("narrator/findings.json", "w") as f:
+    json.dump(findings, f, indent=2)
+
+print(json.dumps(findings, indent=2))
