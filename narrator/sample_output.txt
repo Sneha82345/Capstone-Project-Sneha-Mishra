@@ -1,0 +1,18 @@
+API error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).', 'status': 'NOT_FOUND'}} -> using offline narrative
+SITUATION
+After cleaning the order data, Mamaearth's verified revenue is INR 88,760.30. This is INR 11,099.90 lower than the raw figure of INR 99,860.20, because of duplicate double-submit orders.
+
+COMPLICATION
+Cash on Delivery returns at 44.4% compared with 14.7% for Card and 18.9% for UPI. The highest-risk segment is COD in Tier-2 cities at 54.5%. January looked like the best month (INR 29,582.10) only because of two bulk orders; without them it is INR 11,637.10, and March is the true peak at INR 20,318.90.
+
+RESOLUTION
+Add stronger controls for COD orders in Tier-2 cities, block duplicate submissions at checkout, and plan campaigns around the March peak.
+
+Tokens: 0
+
+Checker:
+FAIL - 97,358.30 (cleaned total revenue)
+PASS - 44.4 (COD return rate)
+PASS - 54.5 (COD + Tier-2 rate)
+FAIL - 2,501.90 (duplicate delta)
+PASS - March + 20,318.90 (true peak)
