@@ -1,11 +1,12 @@
 import json
-import os
 import calendar
 from google import genai
-from google.genai import types
+from google.genai import types, errors
+from google.colab import userdata
 
-MODEL = "gemini-2.5-flash"   # if "model not found", use the Flash model listed in AI Studio
+MODEL = "gemini-3-flash-preview"   # if "model not found", use the Flash model listed in AI Studio
 
+key = userdata.get('GEMINI_API_KEY')
 
 def month_name(month_text):
     return calendar.month_name[int(month_text.split("-")[1])]   # "2026-03" -> "March"
@@ -43,7 +44,7 @@ def generate_scr_narrative_offline(findings):
 # ---------------- TASK 2 + 3: main function ----------------
 def generate_scr_narrative(findings):
     # Task 4: no API key -> offline path
-    api_key = os.getenv("GEMINI_API_KEY")
+    api_key = key
     if not api_key:
         return generate_scr_narrative_offline(findings)
 
