@@ -1,18 +1,8 @@
-API error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).', 'status': 'NOT_FOUND'}} -> using offline narrative
-SITUATION
-After cleaning the order data, Mamaearth's verified revenue is INR 88,760.30. This is INR 11,099.90 lower than the raw figure of INR 99,860.20, because of duplicate double-submit orders.
+**Situation**
+Our fiscal review of Mamaearth’s regional performance initially reported a raw total revenue of INR 99,860.20. Early data suggested that January was the strongest period, with collections peaking at INR 29,582.10. However, a granular audit of payment channels revealed significant volatility in logistics, particularly regarding the return rate by payment method (%). Our records show that COD returns stand at 44.4%, significantly higher than UPI at 18.9% and CARD at 14.7%.
 
-COMPLICATION
-Cash on Delivery returns at 44.4% compared with 14.7% for Card and 18.9% for UPI. The highest-risk segment is COD in Tier-2 cities at 54.5%. January looked like the best month (INR 29,582.10) only because of two bulk orders; without them it is INR 11,637.10, and March is the true peak at INR 20,318.90.
+**Complication**
+The integrity of our growth narrative was challenged by data redundancies and non-recurring transactions. We identified a duplicate reconciliation delta of INR 2,501.90, which inflated the top line. Furthermore, the January surge was found to be artificial; after removing two bulk orders, the monthly revenue is INR 11,637.10. We also identified a highest-risk segment: COD orders from Tier-2 cities, which exhibit a return rate of 54.5%, threatening regional margins.
 
-RESOLUTION
-Add stronger controls for COD orders in Tier-2 cities, block duplicate submissions at checkout, and plan campaigns around the March peak.
-
-Tokens: 0
-
-Checker:
-FAIL - 97,358.30 (cleaned total revenue)
-PASS - 44.4 (COD return rate)
-PASS - 54.5 (COD + Tier-2 rate)
-FAIL - 2,501.90 (duplicate delta)
-PASS - March + 20,318.90 (true peak)
+**Resolution**
+By adjusting for these discrepancies, we have established a cleaned total revenue of INR 97,358.30. This correction shifts our strategic focus to the true peak month, March, which recorded a sustainable INR 20,318.90. To protect the bottom line, finance and ops heads must now implement stricter verification protocols for the 54.5% risk segment in Tier-2 cities. Moving forward, we will prioritize UPI and CARD transactions to mitigate the high return rates associated with COD and ensure long-term stability.
